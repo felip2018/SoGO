@@ -1,0 +1,6 @@
+1. Registro de sucursales de la empresa
+2. Al momento de registrar empresa preguntar si la empresa es la misma sede principal para realizar el
+registro automatico de la sede
+3. Registrar los productos y servicios en el sistema y sus costos para generar automaticamente las cotizaciones 
+al momento de realizar la creación del proyecto
+4. Solicitar el ok a produccion sobre una cotización generada automaticamente con el sistema

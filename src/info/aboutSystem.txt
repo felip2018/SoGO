@@ -1,0 +1,21 @@
+Gestión Operativa
+* El objetivo del sistema es realizar el control de la gestión operativa
+* Manejo de medios (Listado)
+* Una campaña puede abarcar varios puntos en diferentes ciudades
+* Existe una lista de causales de impedimento
+* Existe una comisión por cada linea de negocio
+
+* Proceso de creación de una campaña
+  1. Se recibe una solicitud por correo electrónico
+  2. Se diligencia formato (brief) de compras para solicitar una cotización al area de producción
+  3. Se recibe respuesta de cotización por parte del area de producción
+  4. Se diligencia formato (brief) de diseño y se envía al area de diseño
+  5. El area de diseño responde con una propuesta gráfica en power point
+  6. El cliente aprueba la propuesta gráfica (Tiene un max de 4 ajustes para solicitar)
+  7. Cuando el cliente da el ok sobre la propuesta gráfica se solicitan sherpas (propuestas de color)
+     sobre el formato de diseño
+  8. Diseño responde con los sherpas
+  8. Se diligencia formato de envío de sherpas por mensajería al cliente para su aprobación
+  9. Con el ok del cliente se envian los sherpas a producción
+  10. Se genera un correo sobre el brief de diseño para el ok de inicio a producción
+
