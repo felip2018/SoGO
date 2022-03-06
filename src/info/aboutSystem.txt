@@ -18,4 +18,9 @@ Gestión Operativa
   8. Se diligencia formato de envío de sherpas por mensajería al cliente para su aprobación
   9. Con el ok del cliente se envian los sherpas a producción
   10. Se genera un correo sobre el brief de diseño para el ok de inicio a producción
+  11. Se envia matriz de instalacion a operaciones
+      Se especifica la campaña
+      el cliente
+      que medios se van a instalar y desde cuando iniciar la instalacion (Vigencia)
+      
 

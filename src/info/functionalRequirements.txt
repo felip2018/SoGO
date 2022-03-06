@@ -1,6 +1,32 @@
 1. Registro de sucursales de la empresa
+
 2. Al momento de registrar empresa preguntar si la empresa es la misma sede principal para realizar el
 registro automatico de la sede
+
 3. Registrar los productos y servicios en el sistema y sus costos para generar automaticamente las cotizaciones 
 al momento de realizar la creación del proyecto
+
 4. Solicitar el ok a produccion sobre una cotización generada automaticamente con el sistema
+
+5. Los BREAF seran adjuntos 
+
+6. Crear sistema de notificaciones entre usuarios de acuerdo a la gestión en el proyecto
+
+7. Configuracion de tipos de documentos anexos
+
+8. Configurar la visibilidad de un proyecto para determinados perfiles y/o usuarios
+
+9. Al registrar empresa en el sistema, solicitar datos del administrador (persona) para realizar una configuración inicial
+del sistema
+    - Registrar negocio
+        - Si el negocio es la misma sede principal registrar entonces
+        - Si no entonces solicitar los datos para registrar sede principal
+    - Registrar perfil de administrador en el sistema para esa empresa
+    - Registrar datos de la persona que esta diligenciando la información de registro 
+    - Registrar usuario para la persona que se acaba de registrar  
+
+10. Funcion de busqueda de usuarios para agregarlos a la visibilidad de un proyecto
+
+11. Convertir el detalle de un proyecto en una cotización de productos y/o servicios
+
+12. Creación de calendario de operaciones para ver todo el proceso de operaciones
