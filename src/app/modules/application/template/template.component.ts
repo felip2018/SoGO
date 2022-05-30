@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { menu } from '../navigation/menu';
 
 @Component({
   selector: 'app-template',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ApplicationTemplateComponent implements OnInit {
 
+  public navigationMenu:any = {};
+
   constructor() { }
 
   ngOnInit(): void {
+    this.navigationMenu = menu[0];
+    console.log('navigationMenu', this.navigationMenu);
   }
 
 }
