@@ -115,7 +115,7 @@
           <a href="index3.html" class="brand-link">
             <img src="/assets/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
                  style="opacity: .8">
-            <span class="brand-text font-weight-light">AdminLTE 3</span>
+            <span class="brand-text font-weight-light">SoGO</span>
           </a>
       
           <!-- Sidebar -->
@@ -134,7 +134,7 @@
             <nav class="mt-2">
               <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false" *ngFor="let item of navigationMenu.menu">
                 <li *ngIf="item.type == 'single'" class="{{item.liClass}}">
-                  <a href="{{item.href}}" class="{{item.aClass}}">
+                  <a [routerLink]="[item.href]" class="{{item.aClass}}">
                     <i class="{{item.iClass}}"></i>
                     <p>
                       {{item.name}}
@@ -151,7 +151,7 @@
                   </a>
                   <ul class="nav nav-treeview" *ngFor="let sub of item.submenu">
                     <li class="{{sub.liClass}}">
-                      <a href="{{sub.href}}" class="{{sub.aClass}}">
+                      <a [routerLink]="sub.href" class="{{sub.aClass}}">
                         <i class="{{sub.iClass}}"></i>
                         <p>
                           {{sub.name}}
@@ -159,6 +159,16 @@
                       </a>
                     </li>
                   </ul>
+                </li>
+              </ul>
+              <ul class="nav nav-pills nav-sidebar flex-column">
+                <li class="nav-item">
+                  <button class="nav-link btn btn-block" (click)="closeSession()">
+                    <i class="nav-icon fas fa-sign-out-alt"></i>
+                    <p>
+                      Cerrar sesión
+                    </p>
+                  </button>
                 </li>
               </ul>
             </nav>

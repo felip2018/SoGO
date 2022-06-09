@@ -15,6 +15,10 @@ const routes: Routes = [
     path: 'application',
     component: ApplicationTemplateComponent,
     loadChildren: () => import('./modules/application/application.module').then(m => m.ApplicationModule),
+  },
+  {
+    path: '',
+    loadChildren: () => import('./modules/website/website.module').then(m => m.WebsiteModule),
   }
 ];
 
