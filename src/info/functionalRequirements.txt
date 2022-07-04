@@ -8,7 +8,7 @@ al momento de realizar la creación del proyecto
 
 4. Solicitar el ok a produccion sobre una cotización generada automaticamente con el sistema
 
-5. Los BREAF seran adjuntos 
+5. Los BREAF seran adjuntos
 
 6. Crear sistema de notificaciones entre usuarios de acuerdo a la gestión en el proyecto
 

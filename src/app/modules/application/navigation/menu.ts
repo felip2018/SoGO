@@ -1,5 +1,5 @@
 export const menu = {
-    "0": {
+    "1": {
         "descripcion": "Menú para el super-administrador del sistema",
         "menu": [
             {
@@ -80,19 +80,19 @@ export const menu = {
             }
         ]
     },
-    "1": {
+    "2": {
         "descripcion": "Menú para el administrador de un negocio registrado en el sistema",
         "menu": [
 
         ]
     },
-    "2": {
+    "3": {
         "descripcion": "Menú para el coordinador de proyectos de un negocio registrado en el sistema",
         "menu": [
 
         ]
     },
-    "3": {
+    "4": {
         "descripcion": "Menú para un operario de proyectos de un negocio registrado en el sistema",
         "menu": [
 
