@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthenticationService } from 'src/app/modules/shared/services/authentication.service';
+
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +14,9 @@ export class LoginComponent {
 
   loginForm: FormGroup;
 
-  constructor(private fctrl: FormBuilder, private router: Router) {
+  constructor(private fctrl: FormBuilder,
+              private router: Router,
+              public authentication: AuthenticationService) {
     this.loginForm = fctrl.group({
       username:['', Validators.required],
       password:['', Validators.required]
@@ -19,26 +24,22 @@ export class LoginComponent {
   }
 
   onSubmit() {
+    
     let username = this.loginForm.controls['username'].value;
     let password = this.loginForm.controls['password'].value;
     console.log(`username ${username}`)
-    /*this.auth.login(username, password).subscribe((res) => {
-      if(res.response.length > 0) {
-        console.log("Usuario encontrado!");
-        sessionStorage.setItem('inSession', 'true');
-        sessionStorage.setItem('userData', JSON.stringify(res.response[0]));
-        const data = res.response[0];
-        //this.router.navigate([`${data.PerfilPanel}`]);
-        this.router.navigate(['/application']);
-      } else {
-        // No se han encontrado datos del usuario
-        this.modalTitle = 'Error: Inicio de sesión';
-        this.modalBody = 'El usuario no ha sido encontrado, por favor verifique!';
-        this.showModal = true;
-      }
-    });*/
-
-    // this.router.navigate(['/application']);
+    this.authentication.startSession(username, password).subscribe((res) => {
+      console.log('res', res);
+      // Guardar informacion en session storage y redireccionar a la aplicacion
+    }, (err) => {
+      console.log('err', err.error);
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: err.error?.message || 'Something was wrong!',
+        footer: ''
+      })
+    });  
   }
 
 }

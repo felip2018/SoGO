@@ -16,7 +16,7 @@ export class ApplicationTemplateComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit(): void {
-    this.navigationMenu = menu[0];
+    this.navigationMenu = menu[1];
     console.log('navigationMenu', this.navigationMenu);
   }
 
