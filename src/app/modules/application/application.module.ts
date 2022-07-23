@@ -12,6 +12,7 @@ import { ConfigEstablishmentsComponent } from './pages/config-establishments/con
 import { ConfigUsersComponent } from './pages/config-users/config-users.component';
 import { ConfigIdentityTypesComponent } from './pages/config-identity-types/config-identity-types.component';
 import { ConfigMeasurementUnitsComponent } from './pages/config-measurement-units/config-measurement-units.component';
+import { ReactiveFormsModule } from "@angular/forms";
 
 
 
@@ -31,7 +32,8 @@ import { ConfigMeasurementUnitsComponent } from './pages/config-measurement-unit
   imports: [
     ApplicationRoutingModule,
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ]
 })
 export class ApplicationModule { }

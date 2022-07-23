@@ -5,7 +5,11 @@ import { ApplicationTemplateComponent } from './modules/application/template/tem
 const routes: Routes = [
   {
     path: 'login',
-    loadChildren: () => import('./modules/authentication/authentication.module').then(m => m.LoginModule),
+    loadChildren: () => import('./modules/authentication/authentication.module').then(m => m.AuthenticationModule),
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./modules/register/register.module').then(m => m.RegisterModule),
   },
   {
     path: 'website',

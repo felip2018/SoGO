@@ -1,21 +1,23 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { LoginComponent } from './pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginRoutingModule } from './authentication-routing.module';
 import { AuthenticationService } from '../shared/services/authentication.service';
 import { SharedModule } from '../shared/shared.module';
+import { RegisterAdminComponent } from './pages/register-admin/register-admin.component';
+import { RegisterBusinessComponent } from './pages/register-business/register-business.component';
+import { RegisterRoutingModule } from './register-routing.module';
 
 
 
 @NgModule({
   declarations: [
-    LoginComponent,
+    RegisterBusinessComponent,
+    RegisterAdminComponent,
   ],
   imports: [
     CommonModule,
-    LoginRoutingModule,
     FormsModule,
+    RegisterRoutingModule,
     ReactiveFormsModule,
     SharedModule
   ],
@@ -23,4 +25,4 @@ import { SharedModule } from '../shared/shared.module';
     AuthenticationService
   ]
 })
-export class AuthenticationModule { }
+export class RegisterModule { }

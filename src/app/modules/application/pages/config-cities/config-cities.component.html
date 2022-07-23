@@ -1,1 +1,120 @@
-<p>config-cities works!</p>
+<div class="row">
+  <div class="col-12">
+    <p>Configuración de paises, regiones y ciudades</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Paises</h3>
+        <button class="btn btn-info float-right" title="Agregar" (click)="showHideForm('country')">
+          <i class="fa {{(showFormCountry)?'fa-minus':'fa-plus'}}"></i>
+        </button>
+      </div>
+      <form *ngIf="showFormCountry" class="row" [formGroup]="formCountry" (ngSubmit)="saveUpdateCountry()">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="countryName">Ingrese el nombre del país</label>
+            <input type="text" class="form-control" id="countryName" placeholder="Nombre" formControlName="countryName">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit" [disabled]="formCountry.invalid">Guardar</button>
+          </div>
+        </div>
+      </form>
+      <div class="card-body" style="height: 500px; overflow-y: scroll">
+        <table class="table table-striped">
+          <tbody>
+            <tr *ngFor="let country of countriesList">
+              <td>{{country['name']}}</td>
+              <td>
+                <button class="btn btn-secondary float-right" (click)="getRegionsList(country['id'])">
+                  <i class="fa fa-search"></i>
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Regiones</h3>
+        <button class="btn btn-info float-right" title="Agregar" (click)="showHideForm('region')">
+          <i class="fa {{(showFormRegion)?'fa-minus':'fa-plus'}}"></i>
+        </button>
+      </div>
+      <form *ngIf="showFormRegion" class="row" [formGroup]="formRegion" (ngSubmit)="saveUpdateRegion()">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="selectedCountry">País seleccionado</label>
+            <input type="text" class="form-control" id="selectedCountry" [value]="selectedCountry['name']" readonly="true">
+          </div>
+          <div class="form-group">
+            <label for="regionName">Ingrese el nombre de la región</label>
+            <input type="text" class="form-control" id="regionName" placeholder="Nombre" formControlName="regionName">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit" [disabled]="formRegion.invalid">Guardar</button>
+          </div>
+        </div>
+      </form>
+      <div class="card-body" style="height: 500px; overflow-y: scroll">
+        <table class="table table-striped">
+          <tbody>
+          <tr *ngFor="let region of regionsList">
+            <td>{{region['name']}}</td>
+            <td>
+              <button class="btn btn-secondary float-right" (click)="getCitiesList(region['id'])">
+                <i class="fa fa-search"></i>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+    <div class="card card-primary">
+      <div class="card-header">
+        <h3 class="card-title">Ciudades</h3>
+        <button class="btn btn-info float-right" title="Agregar" (click)="showHideForm('city')">
+          <i class="fa {{(showFormCity)?'fa-minus':'fa-plus'}}"></i>
+        </button>
+      </div>
+      <form *ngIf="showFormCity" class="row" [formGroup]="formCity" (ngSubmit)="saveUpdateCity()">
+        <div class="card-body">
+          <div class="form-group">
+            <label for="selectedRegion">Region seleccionada</label>
+            <input type="text" class="form-control" id="selectedRegion" [value]="selectedRegion['name']" readonly="true">
+          </div>
+          <div class="form-group">
+            <label for="cityName">Ingrese el nombre de la ciudad</label>
+            <input type="text" class="form-control" id="cityName" placeholder="Nombre" formControlName="cityName">
+          </div>
+          <div class="form-group">
+            <button class="btn btn-primary btn-block" type="submit" [disabled]="formCity.invalid">Guardar</button>
+          </div>
+        </div>
+      </form>
+      <div class="card-body" style="height: 500px; overflow-y: scroll">
+        <table class="table table-striped">
+          <tbody>
+          <tr *ngFor="let city of citiesList">
+            <td>{{city['name']}}</td>
+            <td>
+              <button class="btn btn-secondary float-right">
+                <i class="fa fa-search"></i>
+              </button>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

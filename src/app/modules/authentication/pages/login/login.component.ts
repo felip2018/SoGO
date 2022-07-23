@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from 'src/app/modules/shared/services/authentication.service';
@@ -10,7 +10,7 @@ import Swal from 'sweetalert2';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
@@ -21,6 +21,11 @@ export class LoginComponent {
       username:['', Validators.required],
       password:['', Validators.required]
     });
+  }
+
+  ngOnInit(): void {
+    // Consultar parámetros para registro y funcionamiento del sistema
+    
   }
 
   onSubmit() {
@@ -40,6 +45,10 @@ export class LoginComponent {
         footer: ''
       })
     });  
+  }
+
+  register() {
+    this.router.navigate(['/register']);
   }
 
 }
